@@ -5,10 +5,30 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no tests are implemented yet \" && exit 1"
+    "test": "jest --coverage && coveralls < coverage/lcov.info"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    },
+    "collectCoverageFrom": [
+      "**/src/*",
+      "!**/.internal/**"
+    ],
+    "reporters": [
+      "default",
+      ["./node_modules/jest-html-reporter",{
+        "pageTitle": "Test Report"
+        }]
+    ]
+
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-jest": "^27.4.2",
+    "coveralls": "^3.1.1",
+    "jest": "^27.4.3",
+    "jest-html-reporter": "^3.4.2"
+  }
 }
