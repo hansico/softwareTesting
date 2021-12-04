@@ -8,4 +8,7 @@ test('testAddWithNegativeValue',()=>{
     expect(add(-1, 3)).toBe(2);
   })
 
+  test('testAddWithNegativeValueee',()=>{
+    expect(add("a", 3)).toThrow();
+  })
   
