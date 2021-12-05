@@ -1,6 +1,6 @@
 import filter from '../src/filter'
 
-const users = [
+const foods = [
        { 'name': 'banana', 'category': 'fruit' },
        { 'name': 'sadwich',   'category': 'bread' }
      ]
@@ -8,9 +8,9 @@ const users = [
      
 
      test('testFilter',()=>{
-        expect(filter(users, ({ category }) => category == 'fruit')).toStrictEqual([{'name' : 'banana', 'category': 'fruit'}]);
+        expect(filter(foods, ({ category }) => category == 'fruit')).toStrictEqual([{'name' : 'banana', 'category': 'fruit'}]);
       })
 
       test('testFilteruli',()=>{
-        expect(filter(users, ({ category }) => category == 'clothes')).toStrictEqual([[]]);
+        expect(filter(foods, ({ category }) => category == 'clothes')).toStrictEqual([[]]);
       })
