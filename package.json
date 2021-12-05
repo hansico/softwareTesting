@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "jest --coverage && coveralls < coverage/lcov.info"
+    "test": "jest --coverage",
+    "test-release":"jest --coverage && coveralls < coverage/lcov.info",
+    "send-coverall": "coveralls < coverage/lcov.info"
   },
   "jest": {
     "transform": {
